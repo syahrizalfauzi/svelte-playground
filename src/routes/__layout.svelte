@@ -10,10 +10,15 @@
 
 	onMount(async () => {
 		const initLocale = localStorage.getItem('locale') || defaultLocale; // set default if no locale already set await
-		loadTranslations(initLocale);
+		await loadTranslations(initLocale);
 	});
 </script>
 
-<button on:click={() => changeLocale('id')}>ID</button>
-<button on:click={() => changeLocale('en')}>EN</button>
+<nav>
+	<p>ceritanya navbar</p>
+	<a href="/">Home</a>
+	<a href="/bruh">Bruh</a>
+	<button on:click={() => changeLocale('id')}>ID</button>
+	<button on:click={() => changeLocale('en')}>EN</button>
+</nav>
 <slot />
